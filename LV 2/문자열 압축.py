@@ -23,7 +23,33 @@ def solution(s):
         answer = min(answer, len(make_string))
         
     return answer
-            
+
+# 기존 작성한 소스코드(교재 참고)
+# def solution(s):
+#     answer = len(s)
+#     myStr = ''
+#     for i in range(1, len(s)//2+1):
+#         count = 1
+#         compare = s[:i]
+#         for j in range(i, len(s), i):
+#             if s[j:j+i] == compare:
+#                 count += 1
+#             else:
+#                 if count == 1:
+#                     myStr += compare
+#                 else:
+#                     myStr += (str(count) + compare)
+#                 count = 1
+#                 compare = s[j:j+i]
                 
+#         if count == 1:
+#             myStr += compare
+#         else:
+#             myStr += (str(count) + compare)
+            
+#         answer = min(answer, len(myStr))
+#         myStr = ''
+            
+# return answer
             
         
