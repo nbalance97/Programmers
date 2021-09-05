@@ -15,6 +15,19 @@ def bfs(numbers, target):
         queue.append([currentSum - numbers[idx], idx+1])
     
     return answer
+
+def dfs(numbers, currentSum, idx, target):
+    if idx == len(numbers):
+        if currentSum == target:
+            return 1
+        return 0
+    
+    return dfs(numbers, currentSum+numbers[idx], idx+1, target) + (
+        dfs(numbers, currentSum-numbers[idx], idx+1, target)
+    )
+
+    
             
 def solution(numbers, target):
-    return bfs(numbers, target)
+    #return bfs(numbers, target)
+    return dfs(numbers, 0, 0, target)
