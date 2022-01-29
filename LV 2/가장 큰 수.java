@@ -30,14 +30,7 @@ class Solution {
                 .collect(Collectors.toList());
 
         elementList.sort((p1, p2) -> {
-            if (p1.value < p2.value) {
-                return 1;
-            } else if (p1.value == p2.value) {
-                return Integer.compare(Integer.toString(p1.realValue).length(),
-                        Integer.toString(p2.realValue).length());
-            } else {
-                return -1;
-            }
+            return -Integer.compare(p1.value, p2.value);
         });
 
         for (Element e : elementList) {
